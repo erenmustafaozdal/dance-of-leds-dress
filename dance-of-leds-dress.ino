@@ -53,14 +53,14 @@ uint8_t myFavoriteColors[][3] = {
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
-  pinMode(X_PIN, INPUT);  // `xpin` ile belirlenen analog pin X ekseni için giriş olarak ayarlanır.
-  pinMode(Y_PIN, INPUT);  // `ypin` ile belirlenen analog pin Y ekseni için giriş olarak ayarlanır.
-  pinMode(Z_PIN, INPUT);  // `zpin` ile belirlenen analog pin Z ekseni için giriş olarak ayarlanır.
+  pinMode(X_PIN, INPUT);  // `X_PIN` ile belirlenen analog pin X ekseni için giriş olarak ayarlanır.
+  pinMode(Y_PIN, INPUT);  // `Y_PIN` ile belirlenen analog pin Y ekseni için giriş olarak ayarlanır.
+  pinMode(Z_PIN, INPUT);  // `Z_PIN` ile belirlenen analog pin Z ekseni için giriş olarak ayarlanır.
 
   Serial.begin(9600);  // 9600 seri port (boud rate) ile Arduino’nun haberleşmesi başlatılıyor
 
-  strip.begin();             // NeoPixel şerit nesnesini başlatalım (GEREKLİ)
-  strip.show();              // Tüm pikselleri en kısa sürede KAPATALIM
+  strip.begin();            // NeoPixel şerit nesnesini başlatalım (GEREKLİ)
+  strip.show();             // Tüm pikselleri en kısa sürede KAPATALIM
   strip.setBrightness(50);  // PARLAKLIĞI ayarlayalım (maks = 255)
 }
 
@@ -94,14 +94,14 @@ X, Y, Z eksen değerlerini alır ve üç eksenli vektör büyüklüğünü hesap
 Kaynak: http://en.wikipedia.org/wiki/Euclidean_vector#Length
 */
 double calculateVector(int xpin, int ypin, int zpin) {
-  /* Yeni bir sensör olayı alın */
+  /* Sensör eksen değerleri alınır */
   int x = analogRead(xpin);
   int y = analogRead(ypin);
   int z = analogRead(zpin);
 
-  Serial.print("Accel X: " + String(x) + " ");
-  Serial.print("Accel Y: " + String(y) + " ");
-  Serial.print("Accel Z: " + String(z) + " ");
+  Serial.print("X Ekseni: " + String(x) + " ");
+  Serial.print("Y Ekseni: " + String(y) + " ");
+  Serial.print("Z Ekseni: " + String(z) + " ");
 
   double vectorLength = pow(x, 2) + pow(y, 2) + pow(z, 2);
   vectorLength = sqrt(vectorLength);
