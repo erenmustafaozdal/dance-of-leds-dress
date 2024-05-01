@@ -22,7 +22,7 @@ Eğer duygularınızı içtenlikle ifade ederseniz minnettar olurum.
 // daha düşük sayı = daha hassas
 #define MOVE_THRESHOLD 45
 
-#define LED_COUNT 2  // led sayısı
+#define LED_COUNT 12  // led sayısı
 #define LED_PIN 2    // ledlere verinin aktarılacağı dijital pin  numarası
 
 // Burası görünecek favori renklerinizi koyabileceğiniz yer!
